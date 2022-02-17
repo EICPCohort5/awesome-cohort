@@ -43,6 +43,7 @@ Awesome stuff for the cohort. Mostly useful links and any other resources we'd l
 
 ## git/GitHub
 - [Awesome git](https://github.com/dictcp/awesome-git)
+- [Learn Git Branching](https://learngitbranching.js.org/?locale=en_US)
 - [GitHub Flow](https://guides.github.com/introduction/flow/): A suggested guide to start helping you plan your git and GitHub management. 
 - [Other git workflows](https://buddy.works/blog/5-types-of-git-workflows)
 - [Old school Git Flow](https://nvie.com/posts/a-successful-git-branching-model/): Don't forget to read the important note!
