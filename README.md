@@ -47,8 +47,7 @@ Awesome stuff for the cohort. Mostly useful links and any other resources we'd l
 - [GitHub Flow](https://guides.github.com/introduction/flow/): A suggested guide to start helping you plan your git and GitHub management. 
 - [Other git workflows](https://buddy.works/blog/5-types-of-git-workflows)
 - [Old school Git Flow](https://nvie.com/posts/a-successful-git-branching-model/): Don't forget to read the important note!
-- [Working with forks](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks)
-- [GitHub Forking](https://gist.github.com/Chaser324/ce0505fbed06b947d962): The first three sections are great, after 'Submitting a Pull Request' it's too complicated and a bit out of date. 
+- [Working with forks](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks) 
 - [Creating a pull request from a fork](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
 - [GitHub Actions](https://docs.github.com/en/actions)
 - [Migrating from Jenkins to GitHub Actions](https://docs.github.com/en/actions/migrating-to-github-actions/migrating-from-jenkins-to-github-actions)
