@@ -1,1 +1,1 @@
-# awesome-cohort
+# Resources for EICP Cohort 5
