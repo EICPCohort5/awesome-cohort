@@ -121,6 +121,11 @@ Awesome stuff for the cohort. Mostly useful links and any other resources we'd l
 - [Can I use](https://caniuse.com/): Can I use a CSS/HTML/JS feature? 
 - [CSS Tricks](https://css-tricks.com/)
 
+#### CSS Selectors Reference
+- [MDN CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- [MDN CSS Selectors as part of overall CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
+- [CSS-Tricks: How Selectors Work](https://css-tricks.com/how-css-selectors-work/)
+
 ### Cool sites
 - [CSS Zen Garden](http://www.csszengarden.com/221/): Examples of what you can do in CSS
 - [Yamauchi No. 10](https://y-n10.com/)
