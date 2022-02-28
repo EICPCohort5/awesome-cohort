@@ -131,6 +131,13 @@ Awesome stuff for the cohort. Mostly useful links and any other resources we'd l
 - [Yamauchi No. 10](https://y-n10.com/)
 - [FPS CSS](https://keithclark.co.uk/labs/css-fps/)
 
+## HTTP
+
+- [cURL](https://curl.se/) Client for URLs / "see" URLs
+- [MDN HTTP Status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- [httpstat.us](http://httpstat.us/)
+- [httpstatuses.com](https://httpstatuses.com/)
+
 ## Other docs and references
 
 - [What happens when](https://github.com/alex/what-happens-when): Trying to answer "What happens when..." for a variety of computer activites ("I press enter", "I search on Google", etc.)
