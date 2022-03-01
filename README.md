@@ -2,6 +2,8 @@
 
 Awesome stuff for the cohort. Mostly useful links and any other resources we'd like to share.
 
+Daily decks are available [here](daily-decks/).
+
 ## Bootcamp reference
 
 ### Teams
