@@ -146,6 +146,20 @@ Daily decks are available [here](daily-decks/).
 - [Periodic table of DevOps tools](https://digital.ai/periodic-table-of-devops-tools)
 - [Yellow fade technique](https://kamranahmed.info/blog/2016/01/30/yellow-fade-technique-in-css/)
 
+### REST APIs
+- [OpenAPI standard](https://support.smartbear.com/swaggerhub/docs/tutorials/openapi-3-tutorial.html)
+- Well-implemented APIs
+  - Debatable about simplicity, but Twitter's [API docs](https://developer.twitter.com/en/docs/api-reference-index) are good
+  - [JSONPlaceholder](http://jsonplaceholder.typicode.com/) (though it's "fake" in that it's simplified)
+  - [Google Calendar API](https://developers.google.com/calendar/api/v3/reference)
+    - Particularly the [Events](https://developers.google.com/calendar/api/v3/reference#Events) API
+  - [Instagram Media API](https://developers.facebook.com/docs/instagram-api/reference/ig-media)
+  - Evolving API: Pinboard
+    - Pinboard is a link saving tool
+    - [Version 1](https://pinboard.in/api/), which has lots of bad habits and practices
+    - [Version 2](https://pinboard.in/api/v2/overview), under development, which works with best practices
+
+
 ### Tech stack
 
 - [One man tech stack](https://panelbear.com/blog/tech-stack/)
