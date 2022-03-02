@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="John Paxton">
+  <meta name="dcterms.date" content="2022-03-01">
+  <title>EIC Cohort 5 - Day 10</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">EIC Cohort 5 - Day 10</h1>
+  <p class="author">John Paxton</p>
+  <p class="date">2022-03-01</p>
+</section>
+
+<section>
+<section id="eic-cohort-5---day-10" class="title-slide slide level1">
+<h1>EIC Cohort 5 - Day 10</h1>
+
+</section>
+<section id="rest-implementation-with-javascript" class="slide level2">
+<h2>REST Implementation with JavaScript</h2>
+</section>
+<section id="check-in" class="slide level2">
+<h2>Check-in</h2>
+<ul>
+<li>Attendance</li>
+<li>Happy March! What are you looking forward to this month?</li>
+<li>Pluralsight engagement winners</li>
+<li>Git review rescheduled for Thursday morning</li>
+</ul>
+</section>
+<section id="old-business" class="slide level2">
+<h2>Old Business</h2>
+<ul>
+<li>Well-implemented simple API
+<ul>
+<li>Debatable about simplicity, but Twitter’s <a
+href="https://developer.twitter.com/en/docs/api-reference-index">API
+docs</a> are good</li>
+<li><a href="http://jsonplaceholder.typicode.com/">JSONPlaceholder</a>
+(though it’s “fake” in that it’s simplified)</li>
+<li><a
+href="https://developers.google.com/calendar/api/v3/reference">Google
+Calendar API</a>
+<ul>
+<li>Particularly the <a
+href="https://developers.google.com/calendar/api/v3/reference#Events">Events</a>
+API</li>
+</ul></li>
+<li><a
+href="https://developers.facebook.com/docs/instagram-api/reference/ig-media">Instagram
+Media API</a></li>
+<li>Evolving API: Pinboard
+<ul>
+<li>Pinboard is a link saving tool</li>
+<li>Version 1, which has lots of bad habits and practices:
+https://pinboard.in/api/</li>
+<li>Version 2, under development, which works with best practices:
+https://pinboard.in/api/v2/overview</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="library-api" class="slide level2">
+<h2>Library API</h2>
+<ul>
+<li>Resources
+<ul>
+<li>books</li>
+<li>authors</li>
+<li>users</li>
+</ul></li>
+<li>We’ll go over books, a lot of the URLs would be similar</li>
+<li>A library “shopping cart” would be more complicated than we want to
+implement right now</li>
+</ul>
+</section>
+<section id="books" class="slide level2">
+<h2>Books</h2>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 8%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>HTTP</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>/books</code></td>
+<td>GET</td>
+<td>array of Books</td>
+</tr>
+<tr class="even">
+<td><code>/books</code></td>
+<td>POST</td>
+<td>added Book, including ID</td>
+</tr>
+<tr class="odd">
+<td><code>/books/:id</code></td>
+<td>GET</td>
+<td>Book if found, 404 otherwise</td>
+</tr>
+<tr class="even">
+<td><code>/books/:id</code></td>
+<td>PATCH</td>
+<td>Updated Book</td>
+</tr>
+<tr class="odd">
+<td><code>/books/:id</code></td>
+<td>PUT</td>
+<td>Updated (replaced) Book</td>
+</tr>
+<tr class="even">
+<td><code>/books/:id</code></td>
+<td>DELETE</td>
+<td>Status 204 (No Content)</td>
+</tr>
+<tr class="odd">
+<td><code>/books/author/:id</code></td>
+<td>GET</td>
+<td>array of Books by Author</td>
+</tr>
+<tr class="even">
+<td><code>/books/:id/author</code></td>
+<td>GET</td>
+<td>Author information for a Book</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="books-sorting-and-filtering" class="slide level2">
+<h2>Books, sorting and filtering</h2>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 8%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>HTTP</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>/books?sort={field}</code></td>
+<td>GET</td>
+<td>Books sorted by {field}</td>
+</tr>
+<tr class="even">
+<td><code>/books?sort={field}&amp;order={asc|desc}</code></td>
+<td>GET</td>
+<td>Books sorted by {field}, ascending or descending</td>
+</tr>
+<tr class="odd">
+<td><code>/books?{field}={value}</code></td>
+<td>GET</td>
+<td>Books where {field} === {value}</td>
+</tr>
+<tr class="even">
+<td><code>/books?{field}Like={value}</code></td>
+<td>GET</td>
+<td>Books where {field} matches {value}</td>
+</tr>
+<tr class="odd">
+<td><code>/books?titleLike={partial}</code></td>
+<td>GET</td>
+<td>Books where title is like {partial}</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="books-paging-and-subsets" class="slide level2">
+<h2>Books, paging and subsets</h2>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 8%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>HTTP</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>/books?start={n}</code></td>
+<td>GET</td>
+<td>Books, starting at the nth Book</td>
+</tr>
+<tr class="even">
+<td><code>/books?end={n}</code></td>
+<td>GET</td>
+<td>Books, ending at the nth Book</td>
+</tr>
+<tr class="odd">
+<td><code>/books?limit={n}</code></td>
+<td>GET</td>
+<td>Books, but only n of the results</td>
+</tr>
+<tr class="even">
+<td><code>/books?page={n}&amp;limit=10</code></td>
+<td>GET</td>
+<td>Page n of Books, where each page is 10 Books long</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
+<ul>
+<li>What did you think of the async material?</li>
+<li>What was clear?</li>
+<li>What wasn’t clear?</li>
+<li>Anything you want to try out in practice?</li>
+</ul>
+</section>
+<section id="activity" class="slide level2">
+<h2>Activity</h2>
+</section>
+<section id="wrap-up" class="slide level2">
+<h2>Wrap-up</h2>
+<p>Thursday: The DevSecOps presentation!</p>
+<h3 id="async-content">Async Content</h3>
+<ul>
+<li><a
+href="https://app.pluralsight.com/library/courses/devops-foundations-continuous-integration-continuous-delivery">DevOps
+Foundations</a></li>
+<li><a
+href="https://app.pluralsight.com/library/courses/github-actions-getting-started">Getting
+Started with GitHub Actions</a></li>
+<li>Practice before theory</li>
+<li>Everything here is pretty important, some of the GitHub Actions will
+overlap with the corresponding CI/CD parts of DevOps Foundations</li>
+<li>Experiment with GitHub Actions if you get a chance, though we’ll
+also work with them tomorrow</li>
+</ul>
+<h3 id="homework">Homework</h3>
+<p>Sometime over the next few days, take a look at the <a
+href="https://support.smartbear.com/swaggerhub/docs/tutorials/openapi-3-tutorial.html">OpenAPI
+standard</a>. It’s a spec for specifying an API, often used to specify
+RESTful APIs. You should be familiar with it in general, and
+specifically because we will be using it in the capstone project.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
