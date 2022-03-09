@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="John Paxton">
+  <meta name="dcterms.date" content="2022-03-08">
+  <title>EIC Cohort 5 - Day 14</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">EIC Cohort 5 - Day 14</h1>
+  <p class="author">John Paxton</p>
+  <p class="date">2022-03-08</p>
+</section>
+
+<section>
+<section id="eic-cohort-5---day-14" class="title-slide slide level1">
+<h1>EIC Cohort 5 - Day 14</h1>
+
+</section>
+<section id="sql-and-ddl" class="slide level2">
+<h2>SQL and DDL</h2>
+</section>
+<section id="check-in" class="slide level2">
+<h2>Check-in</h2>
+<ul>
+<li>Attendance</li>
+<li>Do you like musicals, and if so, what’s your favorite?</li>
+</ul>
+</section>
+<section id="old-business" class="slide level2">
+<h2>Old business</h2>
+<ul>
+<li>Class particiation winners from last week
+<ul>
+<li>Steven Portillo</li>
+<li>Callum Ogle</li>
+</ul></li>
+</ul>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li>Database Definition Language</li>
+<li>Order by</li>
+<li>Aggregate/Set functions</li>
+<li>Group by (with or without having)</li>
+<li>Table Joins</li>
+</ul>
+</section>
+<section id="database-definition-language-ddl" class="slide level2">
+<h2>Database Definition Language (DDL)</h2>
+<ul>
+<li>CREATE TABLE [tablename] ( field specifications, constraint
+specifications )</li>
+<li>Field specification:
+<code>[fieldname] [data type] [constraints]</code>
+<ul>
+<li>Constraints not null, auto_increment, etc.</li>
+</ul></li>
+<li>Constraint specification:
+<code>constraint [name] [constraint]</code>
+<ul>
+<li>Primary keys</li>
+<li>Foreign keys</li>
+<li>Check values</li>
+<li>And more!</li>
+</ul></li>
+</ul>
+</section>
+<section id="keys" class="slide level2">
+<h2>Keys</h2>
+<ul>
+<li>Primary keys
+<ul>
+<li>Can have multiple fields</li>
+<li>Often single fields</li>
+<li>Good practice: Arbitrary field, with no actual significance</li>
+</ul></li>
+<li>Foreign keys
+<ul>
+<li>Reference another table</li>
+<li>Allow you to set referential integrity</li>
+</ul></li>
+</ul>
+</section>
+<section id="altering-existing-tables" class="slide level2">
+<h2>Altering existing tables</h2>
+<ul>
+<li>Not necessary in early dev, just re-build the tables with new
+specs</li>
+<li>Needed when data is in production and you can’t drop / rebuild the
+table</li>
+<li><code>ALTER TABLE [changes]</code>
+<ul>
+<li>Can include an ALTER COLUMN subclause to change a particular
+column</li>
+</ul></li>
+</ul>
+</section>
+<section id="activity" class="slide level2">
+<h2>Activity</h2>
+<ul>
+<li>Break out into your teams again</li>
+<li>Pull the latest from <code>restful-books/main</code></li>
+<li>Create a table <code>teams</code> which lists the teams we’ve been
+using
+<ul>
+<li>“Age of Empires”, “Bloons”, “Civilization”, “Halo”, “Kingdom
+Hearts”</li>
+<li>What’s the primary key?</li>
+<li>Any other fields?</li>
+</ul></li>
+<li>Alter the students table to include a column referencing the primary
+key in <code>teams</code>
+<ul>
+<li>Add a foreign key constraint so the column in <code>students</code>
+references the appropriate column in <code>teams</code></li>
+<li>Generate/write update statements so everyone is on their appropriate
+teams</li>
+</ul></li>
+</ul>
+</section>
+<section id="teams" class="slide level2">
+<h2>Teams</h2>
+<div class="columns">
+<div class="column smaller" style="width:20%;">
+<ul>
+<li>Age of Empires
+<ul>
+<li>Abdul Qureshi</li>
+<li>Caroline Manghan</li>
+<li>Mary Wishart</li>
+<li>Maria Ringes</li>
+<li>Rahul Whig</li>
+</ul></li>
+</ul>
+</div><div class="column smaller" style="width:20%;">
+<ul>
+<li>Bloons
+<ul>
+<li>Brianna Fahrenkopf</li>
+<li>Jun Hao Chia</li>
+<li>Christopher Zarba</li>
+<li>Daniel Kotlinski</li>
+<li>Seena Mathew</li>
+</ul></li>
+</ul>
+</div><div class="column smaller" style="width:20%;">
+<ul>
+<li>Civilization
+<ul>
+<li>Steven Portillo</li>
+<li>Baltej Toor</li>
+<li>Jacob Whiteman</li>
+<li>Kaitlin Mullins</li>
+<li>Philip Kopita</li>
+</ul></li>
+</ul>
+</div><div class="column smaller" style="width:20%;">
+<ul>
+<li>Halo
+<ul>
+<li>Adam Audet</li>
+<li>Alex Mazzarese</li>
+<li>Callum Ogle</li>
+<li>Joseph Travers</li>
+<li>Wiktoria Fiolek</li>
+</ul></li>
+</ul>
+</div><div class="column smaller" style="width:20%;">
+<ul>
+<li>Kingdom Hearts
+<ul>
+<li>Christopher Gritter</li>
+<li>Charlie Nathan</li>
+<li>Katrina Wallace</li>
+<li>Peter Baker</li>
+<li>Ambioris Lora</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="joins" class="slide level2">
+<h2>Joins</h2>
+<p>Joining two tables together.</p>
+<p>Why do we have separate tables?</p>
+<p>Types of join:</p>
+<ul>
+<li>Cross join: no one actually uses this, ignore it</li>
+<li>inner join: exact match between tables, no nulls</li>
+<li>outer join: deals with non-matching queries, or nulls in one table
+(usually the second)
+<ul>
+<li>full outer join: all rows all tables, not supported in mySQL, let’s
+not worry about it</li>
+<li>left outer join: all rows from the first (left-hand) table, only
+matches from the second</li>
+<li>right outer join: matching rows in the first table, all matches from
+the second (right-hand) table</li>
+</ul></li>
+<li>self joins: good for hierarchies</li>
+</ul>
+</section>
+<section id="inner-join-syntax" class="slide level2">
+<h2>Inner Join syntax</h2>
+<p>Assume the <code>genres</code> table has <code>genre</code> (the
+name) and <code>genre_id</code> (the primary key)<br />
+Assume the <code>movies</code> table has a <code>genre_id</code> field
+that’s a foreign key to <code>genres</code></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> m.title, g.genre </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> movies </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">inner</span> <span class="kw">join</span> genres g</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">on</span> m.genre_id <span class="op">=</span> g.genre_id</span></code></pre></div>
+</section>
+<section id="activity-1" class="slide level2">
+<h2>Activity</h2>
+<ul>
+<li>Back into groups</li>
+<li>We’re going to create a table that includes historical team
+data</li>
+<li>Clean up <code>students</code>
+<ul>
+<li>Remove the <code>ALTER TABLE</code> statement</li>
+<li><code>students</code> will no longer have a foreign key reference to
+<code>teams</code></li>
+</ul></li>
+<li>Create a table <code>teams_students</code>
+<ul>
+<li>Primary key?</li>
+<li>Includes a column to track the week</li>
+<li>Has a row, <code>team_id</code> that’s a foreign key reference to
+<code>teams</code></li>
+<li>Similar for <code>student_id</code> / <code>students</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="order-by" class="slide level2">
+<h2>Order By</h2>
+<p>Orders the result set according to the criteria specified in the
+result set</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> s.student_id, s.first_name, s.last_name, s.country</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students s</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> s.last_name;</span></code></pre></div>
+</section>
+<section id="set-functions" class="slide level2">
+<h2>Set functions</h2>
+<p>Also known as aggregate functions</p>
+<p>count (nulls with *) max (no nulls) min (no nulls) avg (no nulls) sum
+(no nulls)</p>
+</section>
+<section id="set-function-demos" class="slide level2">
+<h2>Set function demos</h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- COUNT</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>) uk_students <span class="kw">FROM</span> students s</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> country <span class="op">=</span> <span class="st">&#39;UK&#39;</span>;</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">-- MAX</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">MAX</span>(start_date) latest_start_date <span class="kw">FROM</span> students s;</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">-- MIN</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">MIN</span>(start_date) earliest_start_date <span class="kw">FROM</span> students s;</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">-- MAX / MIN</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">MAX</span>(start_date) latest_start_date, <span class="fu">MIN</span>(start_date) earliest_start_date <span class="kw">FROM</span> students s;</span></code></pre></div>
+</section>
+<section id="group-by" class="slide level2">
+<h2>Group By</h2>
+<p>Usually used with set functions Any non-aggregate columns should be
+grouped by (group byed?)</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>) student_count, country <span class="kw">FROM</span> students s</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> country;</span></code></pre></div>
+</section>
+<section id="having" class="slide level2">
+<h2>Having</h2>
+<p>A <code>WHERE</code> clause for aggregate data, or against the group
+by Also note the cool stuff you can do with aliasing</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span> <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">as</span> student_count, </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">count</span>(s.github_id) <span class="kw">as</span> github_count, </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="op">-</span> <span class="fu">count</span>(s.github_id) <span class="kw">as</span> difference,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>       s.country </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span> students s</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">group</span> <span class="kw">by</span> country</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">having</span> difference <span class="op">&gt;</span> <span class="dv">0</span>;</span></code></pre></div>
+</section>
+<section id="joins-1" class="slide level2">
+<h2>Joins</h2>
+<p>Joining two tables together. Why do we have separate tables? Types of
+join: - Cross join: no one actually uses this, ignore it - inner join:
+exact match between tables, no nulls - outer join: deals with
+non-matching queries, or nulls in one table (usually the second) - full
+outer join: all rows all tables, not supported in mySQL, let’s not worry
+about it - left outer join: all rows from the first (right-hand) table,
+only matches from the second - right outer join: matching rows in the
+first (right-hand) table, all matches from the second - self joins: good
+for hierarchies</p>
+</section>
+<section id="other-join-syntaxes" class="slide level2">
+<h2>Other join syntaxes</h2>
+</section>
+<section id="building-databases" class="slide level2">
+<h2>Building databases</h2>
+</section>
+<section id="data-types" class="slide level2">
+<h2>Data types</h2>
+<p>char, varchar, binary, smallint, integer, bigint, boolean, date,
+time, timestamp</p>
+</section>
+<section id="keys-1" class="slide level2">
+<h2>Keys</h2>
+<p>Primary keys Foreign keys</p>
+</section>
+<section id="constraints" class="slide level2">
+<h2>Constraints</h2>
+</section>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
+<ul>
+<li>What did you think of the async material?</li>
+<li>What was clear?</li>
+<li>What wasn’t clear?</li>
+<li>Anything you want to try out in practice?</li>
+</ul>
+</section>
+<section id="q-a" class="slide level2">
+<h2>Q &amp; A</h2>
+</section>
+<section id="activity-2" class="slide level2">
+<h2>Activity</h2>
+</section>
+<section id="wrap-up" class="slide level2">
+<h2>Wrap-up</h2>
+<h3 id="async-content">Async Content</h3>
+<h3 id="homework">Homework</h3>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

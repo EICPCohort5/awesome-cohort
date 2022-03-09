@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="John Paxton">
+  <meta name="dcterms.date" content="2022-03-09">
+  <title>EIC Cohort 5 - Day 15</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">EIC Cohort 5 - Day 15</h1>
+  <p class="author">John Paxton</p>
+  <p class="date">2022-03-09</p>
+</section>
+
+<section>
+<section id="eic-cohort-5---day-15" class="title-slide slide level1">
+<h1>EIC Cohort 5 - Day 15</h1>
+
+</section>
+<section id="orm-with-sequelize" class="slide level2">
+<h2>ORM With Sequelize</h2>
+</section>
+<section id="check-in" class="slide level2">
+<h2>Check-in</h2>
+<ul>
+<li>Attendance</li>
+<li>Anybody pay attention to the Apple event yesterday? Anything
+interesting?</li>
+</ul>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li>Setup and connection issues</li>
+<li>Models</li>
+</ul>
+</section>
+<section id="setup-and-connection" class="slide level2">
+<h2>Setup and Connection</h2>
+<ul>
+<li>How can I set up a connection?</li>
+<li>Breaking down a connection string:
+<code>mysql://root:root@localhost:3306/demos</code></li>
+<li><a
+href="https://sequelize.org/v6/class/src/sequelize.js~Sequelize.html#instance-constructor-constructor">Connection
+configuration</a></li>
+<li>Big choice: Mapping to an existing schema, or creating your own?
+<ul>
+<li>Pros?</li>
+<li>Cons?</li>
+</ul></li>
+<li>Synchronizing
+<ul>
+<li>Leave the database alone</li>
+<li>Bring the database in line with the model:
+<code>{alter: true}</code></li>
+<li>Drop and rebuild the database according to the model:
+<code>{force: true}</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="model-definitions" class="slide level2">
+<h2>Model definitions</h2>
+<ul>
+<li>Via <code>sequelize.define()</code></li>
+<li>Via subclassing Model</li>
+<li>Define attributes (next slide)</li>
+<li>Define configuration
+<ul>
+<li>tableName: Map to a table in the database</li>
+<li>freezeTableName: Create a table with the exact same name as the
+model (instead of a pluralized version)</li>
+<li>timestamps: Whether or not to create time stamp fields (createdAt,
+updatedAt)</li>
+<li><a
+href="https://sequelize.org/v6/class/src/model.js~Model.html#static-method-init">many
+others</a>!</li>
+</ul></li>
+</ul>
+</section>
+<section id="model-attributes" class="slide level2">
+<h2>Model attributes</h2>
+<ul>
+<li>type: <a
+href="https://sequelize.org/v6/variable/index.html#static-variable-DataTypes">API
+Definitions</a>, <a
+href="https://sequelize.org/v6/manual/model-basics.html#data-types">Manual
+Page</a></li>
+<li>field: Map to the field name in the database</li>
+<li>allowNull: self-explanatory</li>
+<li>primaryKey: also self-explanatory</li>
+<li>references: For associations, which we’ll talk about soon</li>
+</ul>
+</section>
+<section id="adding-or-updating-a-model" class="slide level2">
+<h2>Adding or updating a model</h2>
+<ul>
+<li>Add a model with Model.create()</li>
+<li>Save a model that’s been changed with Model.save()</li>
+</ul>
+</section>
+<section id="model-validations" class="slide level2">
+<h2>Model validations</h2>
+</section>
+<section id="model-queries" class="slide level2">
+<h2>Model queries</h2>
+</section>
+<section id="model-associations" class="slide level2">
+<h2>Model associations</h2>
+<ul>
+<li>One-to-one
+<ul>
+<li><code>Parent.hasOne(Child)</code></li>
+<li><code>Child.belongsTo(Parent)</code></li>
+</ul></li>
+<li>One-to-many
+<ul>
+<li><code>Parent.hasMany(Child)</code></li>
+</ul></li>
+<li>Many-to-many
+<ul>
+<li><code>Parent.belongsToMany(Child)</code></li>
+<li><code>Child.belongsToMany(Parent)</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="fetching-associations" class="slide level2">
+<h2>Fetching associations</h2>
+<p>Several different ways to work with assocation values</p>
+<ul>
+<li>getValue()</li>
+<li>setValue()</li>
+<li>addValue()</li>
+<li>removeValue()</li>
+</ul>
+<p>In all of the above, <code>Value</code> is the association,
+e.g. Teams, Books, etc.</p>
+</section>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
+<ul>
+<li>What did you think of the async material?</li>
+<li>What was clear?</li>
+<li>What wasn’t clear?</li>
+<li>Anything you want to try out in practice?</li>
+</ul>
+</section>
+<section id="q-a" class="slide level2">
+<h2>Q &amp; A</h2>
+</section>
+<section id="activity" class="slide level2">
+<h2>Activity</h2>
+</section>
+<section id="wrap-up" class="slide level2">
+<h2>Wrap-up</h2>
+<h3 id="for-tomorrow">For tomorrow</h3>
+<ul>
+<li><a
+href="https://app.pluralsight.com/library/courses/owasp-top-ten-api-security-playbook">OWASP
+Top 10</a>. The whole thing</li>
+<li><a href="https://owasp.org/www-project-top-ten/2017/">OWASP Top
+10:2017</a> which is what the above content was based on</li>
+<li><a href="https://owasp.org/Top10/">OWASP Top 10:2021</a> the new
+list</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
