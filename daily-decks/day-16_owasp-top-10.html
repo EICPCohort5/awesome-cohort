@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="John Paxton">
-  <meta name="dcterms.date" content="2022-03-09">
-  <title>EIC Cohort 5 - Day 15</title>
+  <meta name="dcterms.date" content="2022-03-10">
+  <title>EIC Cohort 5 - Day 16</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,206 +31,151 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">EIC Cohort 5 - Day 15</h1>
+  <h1 class="title">EIC Cohort 5 - Day 16</h1>
   <p class="author">John Paxton</p>
-  <p class="date">2022-03-09</p>
+  <p class="date">2022-03-10</p>
 </section>
 
-<section>
-<section id="eic-cohort-5---day-15" class="title-slide slide level1">
-<h1>EIC Cohort 5 - Day 15</h1>
-
-</section>
-<section id="orm-with-sequelize" class="slide level2">
-<h2>ORM With Sequelize</h2>
-</section>
-<section id="check-in" class="slide level2">
-<h2>Check-in</h2>
+<section id="eic-cohort-5---day-16" class="slide level1">
+<h1>EIC Cohort 5 - Day 16</h1>
+<h2 id="owasp-top-10">OWASP Top 10</h2>
+<h2 id="check-in">Check-in</h2>
 <ul>
 <li>Attendance</li>
-<li>Anybody pay attention to the Apple event yesterday? Anything
-interesting?</li>
+<li>What’s your comfort food?</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>OWASP? Top 10? API Top 10?</li>
+<li>The top 10</li>
 </ul>
 </section>
-<section id="old-business" class="slide level2">
-<h2>Old business</h2>
+<section id="owasp" class="slide level1">
+<h1>OWASP</h1>
 <ul>
-<li>Join reviews</li>
-<li>Complicated join: Students and their teams!</li>
+<li>Open Web Application Security Project (“Oh-wasp”)</li>
+<li>Clearinghouse for good security practices</li>
+<li>Also some good security information</li>
+<li>Check out the <a
+href="https://github.com/juice-shop/juice-shop">juice shop</a>
+application for instance!</li>
 </ul>
-</section>
-<section id="low-level-database-interactions-querying"
-class="slide level2">
-<h2>Low-level database interactions: Querying</h2>
-<ol type="1">
-<li>Open a connection to a database</li>
-<li>Prepare a query (or a statement or similar)</li>
-<li>Execute the query</li>
-<li>Get any results</li>
-<li>Interact with the results</li>
-<li>Maybe clean up the query</li>
-<li>Definitely close the connection</li>
-</ol>
-</section>
-<section id="low-level-database-interactions-modifying"
-class="slide level2">
-<h2>Low-level database interactions: Modifying</h2>
-<ol type="1">
-<li>Open a connection to a database</li>
-<li>Prepare a statement</li>
-<li>Execute the statement</li>
-<li>Get any feedback</li>
-<li>Commit results (at the statement or connection level)</li>
-<li>Maybe clean up the statement</li>
-<li>Definitely close the connection</li>
-</ol>
-</section>
-<section id="orm-style" class="slide level2">
-<h2>ORM Style</h2>
-<p>High-level database abstractions</p>
-<ol type="1">
-<li>Configure connection once</li>
-<li>Define a Model (or Entity) with the connection</li>
-<li>Interact with the Model for whatever you want to do: queries,
-modifications, etc.</li>
-<li>…Profit?</li>
-</ol>
-<p>Also libraries, or patterns like DAOs</p>
-</section>
-<section id="async-summary" class="slide level2">
-<h2>Async Summary</h2>
-<p>– What’s ORM and why is it good? - Setup and connection issues -
-Models - Associations - Modifications</p>
-</section>
-<section id="setup-and-connection" class="slide level2">
-<h2>Setup and Connection</h2>
+<h2 id="top-10-broken-object-level-authorization">Top 10: Broken object
+level authorization</h2>
 <ul>
-<li>How can I set up a connection?</li>
-<li>Breaking down a connection string:
-<code>mysql://root:root@localhost:3306/demos</code></li>
-<li><a
-href="https://sequelize.org/v6/class/src/sequelize.js~Sequelize.html#instance-constructor-constructor">Connection
-configuration</a></li>
-<li>Big choice: Mapping to an existing schema, or creating your own?
+<li>Can I get to (authorization) stuff (objects) that I shouldn’t be
+able to (broken)</li>
+<li>Brute force is often useful here</li>
+<li>Use the principle of least privilege on object authorization</li>
+<li>Issue area: Application design and implementation</li>
+</ul>
+<h2 id="top-10-broken-user-authentication">Top 10: Broken user
+authentication</h2>
 <ul>
-<li>Pros?</li>
-<li>Cons?</li>
+<li>Can I impersonate (authentication) someone (user) I’m not
+(broken)?</li>
+<li>Defensible with good password practice and hygiene</li>
+<li>Principle of least privilege still applies</li>
+<li>Issue area: Application design, platform hosting</li>
+</ul>
+<h2 id="top-10-excessive-data-exposure">Top 10: Excessive data
+exposure</h2>
+<ul>
+<li>Returns too much (excessive) data
+<ul>
+<li>Too many records?</li>
+<li>Too much about a record</li>
 </ul></li>
-<li>Synchronizing
+<li>Not really an attack, more of an accident</li>
+<li>Think of <code>SELECT *</code> vs <code>SELECT [fields]</code></li>
+<li>Issue area: Application design and implementation</li>
+</ul>
+<h2 id="lack-of-resource-and-rate-limiting">Lack of Resource and Rate
+Limiting</h2>
 <ul>
-<li>Leave the database alone</li>
-<li>Bring the database in line with the model:
-<code>{alter: true}</code></li>
-<li>Drop and rebuild the database according to the model:
-<code>{force: true}</code></li>
+<li>Denial of availability</li>
+<li>Throttle requests handled</li>
+<li>Tension between availability and vulnerability</li>
+<li>Load testing usually covers some of this issue</li>
+<li>Issue area: Platform hosting, sometimes application design and
+implementation</li>
+</ul>
+<h2 id="broken-function-level-authorization">Broken function level
+authorization</h2>
+<ul>
+<li>Similar to broken object level authorization</li>
+<li>Are you granted authorization to API functions that you shouldn’t
+be?</li>
+<li>Combine with Lack of resource / DDoS type attacks</li>
+<li>Use role-based access to reinforce limiting authorization</li>
+<li>Issue area: Application design and implementation</li>
+</ul>
+<h2 id="mass-assignment">Mass assignment</h2>
+<ul>
+<li>Data is converted into objects in the API</li>
+<li>The attacker might add more data/fields which would then override
+important information</li>
+<li>Issue area: Application design and implementation</li>
+</ul>
+<h2 id="security-misconfiguration">Security misconfiguration</h2>
+<ul>
+<li>Something somewhere has a hole; very broad!</li>
+<li>Often comes up between prototyping and production
+<ul>
+<li>Security is a pain when you’re rapidly developing</li>
+<li>Security is complicated to stay on top of</li>
 </ul></li>
+<li>Issue area: Platform hosting, some application design</li>
 </ul>
-</section>
-<section id="model-definitions" class="slide level2">
-<h2>Model definitions</h2>
+<h2 id="injection">Injection</h2>
 <ul>
-<li>Via <code>sequelize.define()</code></li>
-<li>Via subclassing Model</li>
-<li>Define attributes (next slide)</li>
-<li>Define configuration
+<li>An attacker’s attempt to send data to an application in a way that
+will change the meaning of commands being sent to an interpreter</li>
+<li><a href="https://xkcd.com/327/">Little Bobby Tables</a></li>
+<li>Issue area: Application implementation, some design</li>
+</ul>
+<h2 id="improper-assets-management">Improper Assets Management</h2>
 <ul>
-<li>tableName: Map to a table in the database</li>
-<li>freezeTableName: Create a table with the exact same name as the
-model (instead of a pluralized version)</li>
-<li>timestamps: Whether or not to create time stamp fields (createdAt,
-updatedAt)</li>
-<li><a
-href="https://sequelize.org/v6/class/src/model.js~Model.html#static-method-init">many
-others</a>!</li>
+<li>Bad environment and version management
+<ul>
+<li>Bad environments: Two environments share resources or
+configuration</li>
+<li>Bad versions: Two or more versions share vulnerabilities</li>
 </ul></li>
+<li>Issue area: Platform hosting, application design</li>
 </ul>
-</section>
-<section id="model-attributes" class="slide level2">
-<h2>Model attributes</h2>
+<h2 id="insufficient-logging-and-monitoring">Insufficient logging and
+monitoring</h2>
 <ul>
-<li>type: <a
-href="https://sequelize.org/v6/variable/index.html#static-variable-DataTypes">API
-Definitions</a>, <a
-href="https://sequelize.org/v6/manual/model-basics.html#data-types">Manual
-Page</a></li>
-<li>field: Map to the field name in the database</li>
-<li>allowNull: self-explanatory</li>
-<li>primaryKey: also self-explanatory</li>
-<li>references: For associations, which we’ll talk about soon</li>
+<li>Risk because you’re not getting good information from your
+application</li>
+<li>Not a “traditional” risk because it’s not directly exploitable</li>
+<li>But a huge problem if you can’t detect changes (bad ones!) in your
+application</li>
+<li>Issue area: Platform hosting, application design,
+implementation</li>
 </ul>
-</section>
-<section id="adding-or-updating-a-model" class="slide level2">
-<h2>Adding or updating a model</h2>
-<ul>
-<li>Add a model with Model.create()</li>
-<li>Save a model that’s been changed with Model.save()</li>
-</ul>
-</section>
-<section id="model-validations" class="slide level2">
-<h2>Model validations</h2>
-</section>
-<section id="model-queries" class="slide level2">
-<h2>Model queries</h2>
-</section>
-<section id="model-associations" class="slide level2">
-<h2>Model associations</h2>
-<ul>
-<li>One-to-one
-<ul>
-<li><code>Parent.hasOne(Child)</code></li>
-<li><code>Child.belongsTo(Parent)</code></li>
-</ul></li>
-<li>One-to-many
-<ul>
-<li><code>Parent.hasMany(Child)</code></li>
-</ul></li>
-<li>Many-to-many
-<ul>
-<li><code>Parent.belongsToMany(Child)</code></li>
-<li><code>Child.belongsToMany(Parent)</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="fetching-associations" class="slide level2">
-<h2>Fetching associations</h2>
-<p>Several different ways to work with assocation values</p>
-<ul>
-<li>getValue()</li>
-<li>setValue()</li>
-<li>addValue()</li>
-<li>removeValue()</li>
-</ul>
-<p>In all of the above, <code>Value</code> is the association,
-e.g. Teams, Books, etc.</p>
-</section>
-<section id="discussion" class="slide level2">
-<h2>Discussion</h2>
+<h2 id="discussion">Discussion</h2>
 <ul>
 <li>What did you think of the async material?</li>
 <li>What was clear?</li>
 <li>What wasn’t clear?</li>
 <li>Anything you want to try out in practice?</li>
 </ul>
-</section>
-<section id="q-a" class="slide level2">
-<h2>Q &amp; A</h2>
-</section>
-<section id="activity" class="slide level2">
-<h2>Activity</h2>
-</section>
-<section id="wrap-up" class="slide level2">
-<h2>Wrap-up</h2>
-<h3 id="for-tomorrow">For tomorrow</h3>
+<h2 id="activity">Activity</h2>
+<h2 id="wrap-up">Wrap-up</h2>
+<p>Evals: https://www.surveymonkey.com/r/X2CDGV9</p>
+<h3 id="async-content">Async Content</h3>
 <ul>
 <li><a
-href="https://app.pluralsight.com/library/courses/owasp-top-ten-api-security-playbook">OWASP
-Top 10</a>. The whole thing</li>
-<li><a href="https://owasp.org/www-project-top-ten/2017/">OWASP Top
-10:2017</a> which is what the above content was based on</li>
-<li><a href="https://owasp.org/Top10/">OWASP Top 10:2021</a> the new
-list</li>
+href="https://app.pluralsight.com/library/courses/comptia-network-plus-networking-concepts/">Networking
+Concepts and Protocols</a>: We’re scattering this throughout the week.
+Watch parts 1 and 2.</li>
+<li><a
+href="https://app.pluralsight.com/library/courses/cloud-computing-fundamentals/">Fundamentals
+of Cloud Computing</a>: Cloud computing theory</li>
 </ul>
-</section></section>
+</section>
     </div>
   </div>
 
