@@ -116,6 +116,6 @@ Model games, publishers, and platforms (more at the database slide)
 - Kingdom Hearts
   - Jacob Whiteman
   - Jun Hao Chia
-  - Philip Kopita
+  - Phillip Kopita
   - Rahul Whig
   - Wiktoria Fiolek
