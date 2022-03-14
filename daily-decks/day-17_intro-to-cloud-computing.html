@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="John Paxton">
+  <meta name="dcterms.date" content="2022-03-14">
+  <title>EIC Cohort 5 - Day 17</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">EIC Cohort 5 - Day 17</h1>
+  <p class="author">John Paxton</p>
+  <p class="date">2022-03-14</p>
+</section>
+
+<section>
+<section id="eic-cohort-5---day-17" class="title-slide slide level1">
+<h1>EIC Cohort 5 - Day 17</h1>
+
+</section>
+<section id="introduction-to-cloud-computing" class="slide level2">
+<h2>Introduction to Cloud Computing</h2>
+</section>
+<section id="check-in" class="slide level2">
+<h2>Check-in</h2>
+<ul>
+<li>Attendance</li>
+<li>What’s your favorite sports moment?</li>
+<li>Today:
+<ul>
+<li>Summary: Cloud computing</li>
+<li>This week’s project</li>
+<li>This week’s teams</li>
+</ul></li>
+</ul>
+</section>
+<section id="summary-introduction-to-cloud-computing"
+class="slide level2">
+<h2>Summary: Introduction to Cloud Computing</h2>
+<ul>
+<li>Mostly an overview</li>
+<li>Mostly theoretical</li>
+<li>We want to make sure we understand the terminology</li>
+<li>Tomorrow, we start breaking stuff in the real world</li>
+</ul>
+</section>
+<section id="the-basics" class="slide level2">
+<h2>The Basics</h2>
+<p>Cloud computing is on-demand computing resources, delivered to you
+over the Internet</p>
+<p>A computing service that you used to do locally (on-premises) and now
+you do it remotely (off-premises)</p>
+</section>
+<section id="cloud-traits" class="slide level2">
+<h2>Cloud traits:</h2>
+<ul>
+<li>Elastic</li>
+<li>Metered</li>
+<li>Self-service</li>
+</ul>
+</section>
+<section id="benefits" class="slide level2">
+<h2>Benefits:</h2>
+<ul>
+<li>Fast access to resources or applications you need</li>
+<li>Metered: Only pay for what you need.</li>
+<li>Flexibility: deploy what you need, yourself, when you need it</li>
+<li>You don’t have to buy physical technology</li>
+<li>Lowers other costs</li>
+<li>IT staff can focus on the business</li>
+</ul>
+</section>
+<section id="risks" class="slide level2">
+<h2>Risks:</h2>
+<ul>
+<li>Trusting the cloud provider (what happens when Azure goes
+down?)</li>
+<li>Potential for data loss</li>
+<li>Access speed issues</li>
+<li>Legal / regulatory questions</li>
+<li>Can’t customize exactly the thing you want (AWS and Node version,
+for instance)</li>
+<li>Costs could spiral/change overnight</li>
+</ul>
+</section>
+<section id="formsstyles-of-cloud-computing" class="slide level2">
+<h2>Forms/styles of cloud computing</h2>
+<ul>
+<li><strong>SaaS</strong>: Software as a service</li>
+<li><strong>IaaS</strong>: Infrastructure as a service</li>
+<li><strong>PaaS</strong>: Platform as a service</li>
+<li><strong>?aaS</strong>: Whatever as a service</li>
+</ul>
+</section>
+<section id="virtualization-vs-containerization" class="slide level2">
+<h2>Virtualization vs Containerization</h2>
+<ul>
+<li>What is virtualization? The logical division of physical computing
+resources.
+<ul>
+<li>But it’s not cloud computing, it just makes cloud computing
+possible.</li>
+</ul></li>
+<li>What is a container? A container is an OS-level virtualization where
+the OS kernel provides isolated user spaces to run applications.
+<ul>
+<li>Containers can run on a VM, so they can be used with virtualization,
+but also on their own.</li>
+<li>Less overhead, faster startup and shutdown.</li>
+</ul></li>
+</ul>
+</section>
+<section id="cloud-types" class="slide level2">
+<h2>Cloud types</h2>
+<ul>
+<li>Public</li>
+<li>Private</li>
+<li>Hybrid: connect your private to your public</li>
+</ul>
+</section>
+<section id="how-do-i-get-to-the-cloud" class="slide level2">
+<h2>How do I get to the cloud</h2>
+<p>… TJX edition, e.g., you’re not making choices between Google, Azure,
+and AWS</p>
+<ul>
+<li>Costs</li>
+<li>Migrate vs rebuild</li>
+<li>Tools</li>
+<li>Provisioning</li>
+<li>Budget</li>
+</ul>
+</section>
+<section id="other-notes" class="slide level2">
+<h2>Other notes</h2>
+<ul>
+<li>Quality <em>Escape From New York</em> reference.</li>
+<li>Kitematic is replaced by Docker Hub and Docker Desktop these
+days</li>
+<li>What is an SLA is important….</li>
+<li>Security is probably managed mostly by DevSecOps, but this is some
+stuff you should think about anyway</li>
+<li><a
+href="https://www.linkedin.com/pulse/20140730172610-9679881-pizza-as-a-service">Pizza
+as a Service</a></li>
+</ul>
+</section>
+<section id="activity" class="slide level2">
+<h2>Activity</h2>
+<p>This week, we’re going to build out a RESTful application from
+scratch. It doesn’t have to look pretty, but it does have to involve the
+following:</p>
+<ul>
+<li>Source control</li>
+<li>Front-end</li>
+<li>Back-end</li>
+<li>Database</li>
+<li>Not the cloud, unless you go through stuff really fast</li>
+</ul>
+</section>
+<section id="topic-area" class="slide level2">
+<h2>Topic area</h2>
+<p>Games, obviously!</p>
+<p>Model games, publishers, and platforms (more at the database
+slide)</p>
+</section>
+<section id="source-control" class="slide level2">
+<h2>Source control</h2>
+<ul>
+<li>Git strategy for your project</li>
+<li>Tests that run at check-in
+<ul>
+<li>At least one client-side</li>
+<li>At least one server-side</li>
+</ul></li>
+<li>Host the entire project in one repo</li>
+</ul>
+</section>
+<section id="front-end" class="slide level2">
+<h2>Front-end</h2>
+<ul>
+<li>The browser</li>
+<li>JavaScript, CSS, HTML</li>
+<li>Use a library like Bootstrap if you’d like</li>
+<li>Fetch data from the server (use <code>fetch</code>, or Axios, or
+another library at your preference)</li>
+</ul>
+</section>
+<section id="front-end-continued" class="slide level2">
+<h2>Front-end, continued</h2>
+<ul>
+<li>Required pages:
+<ul>
+<li>List resource</li>
+<li>Including a filtering capability</li>
+<li>Detail for a resource</li>
+<li>Add a resource</li>
+</ul></li>
+<li>At least one client-side test that should run on check-in (GitHub
+actions)
+<ul>
+<li>package.json target for the above as well, so you can check the test
+without a superfluous check-in</li>
+</ul></li>
+</ul>
+</section>
+<section id="back-end" class="slide level2">
+<h2>Back-end</h2>
+<ul>
+<li>Server is Node.js running ExpressJS</li>
+<li>Use <code>express-generator</code> to set it up
+<ul>
+<li>Which is probably the basis for the file structure for your
+project!</li>
+</ul></li>
+<li>Assume ORM with Sequelize from the start
+<ul>
+<li>Other libraries as you see fit</li>
+</ul></li>
+<li>At least one server-side test that should run on check-in
+<ul>
+<li>package.json target for the above as well, so you can check the test
+without a superfluous check-in</li>
+</ul></li>
+</ul>
+</section>
+<section id="rest-endpoint" class="slide level2">
+<h2>REST endpoint</h2>
+<ul>
+<li>At least one resource</li>
+<li>For that resource
+<ul>
+<li>LIST one</li>
+<li>LIST all</li>
+<li>LIST all, filter</li>
+<li>ADD a new resource</li>
+<li>UPDATE that resource</li>
+<li>Plan for DELETE</li>
+<li>Note that UPDATE and DELETE do not have UIs. Just implement the
+server-side version</li>
+</ul></li>
+<li>Resource(s) get data from and send data to the database, below</li>
+</ul>
+</section>
+<section id="database" class="slide level2">
+<h2>Database</h2>
+<ul>
+<li>Database in mySQL
+<ul>
+<li>Include DDL so anyone can set up the database on their machine</li>
+<li>Include seed SQL so that there’s some starter data in the
+database</li>
+</ul></li>
+<li>Model
+<ul>
+<li>Games</li>
+<li>Publishers</li>
+<li>Platforms</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-model" class="slide level2">
+<h2>Data model</h2>
+<ul>
+<li><code>games</code> is the driving table
+<ul>
+<li>One-to-one relationship with a publisher</li>
+<li>One-to-many relationship with platforms</li>
+</ul></li>
+<li><code>publisher</code>
+<ul>
+<li>One-to-many relationship with games</li>
+<li>No relationship with platforms</li>
+</ul></li>
+<li><code>platforms</code>
+<ul>
+<li>No direct relationship with <code>games</code></li>
+<li>Instead, use a join/junction table</li>
+</ul></li>
+</ul>
+</section>
+<section id="teams" class="slide level2">
+<h2>Teams</h2>
+<div class="columns">
+<div class="column smaller" style="width:20%;">
+<ul>
+<li>Age of Empires
+<ul>
+<li>Abdul Qureshi</li>
+<li>Alex Mazzarese</li>
+<li>Chris Zarba</li>
+<li>Katrina Wallace</li>
+<li>Steven Portillo</li>
+</ul></li>
+</ul>
+</div><div class="column smaller" style="width:20%;">
+<ul>
+<li>Bloons
+<ul>
+<li>Adam Audet</li>
+<li>Charlie Nathan</li>
+<li>Christopher Gritter</li>
+<li>Brianna Fahrenkopf</li>
+<li>Maria Ringes</li>
+</ul></li>
+</ul>
+</div><div class="column smaller" style="width:20%;">
+<ul>
+<li>Civilization
+<ul>
+<li>Ambioris Lora</li>
+<li>Baltej Toor</li>
+<li>Caroline Manghan</li>
+<li>Katie Mullins</li>
+<li>Callum Ogle</li>
+</ul></li>
+</ul>
+</div><div class="column smaller" style="width:20%;">
+<ul>
+<li>Halo
+<ul>
+<li>Daniel Kotlinski</li>
+<li>Joseph Travers</li>
+<li>Mary Wishart</li>
+<li>Peter Baker</li>
+<li>Seena Mathew</li>
+</ul></li>
+</ul>
+</div><div class="column smaller" style="width:20%;">
+<ul>
+<li>Kingdom Hearts
+<ul>
+<li>Jacob Whiteman</li>
+<li>Jun Hao Chia</li>
+<li>Philip Kopita</li>
+<li>Rahul Whig</li>
+<li>Wiktoria Fiolek</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="async-content" class="slide level2">
+<h2>Async Content</h2>
+<p><a
+href="https://app.pluralsight.com/library/courses/developing-nodejs-microsoft-azure-getting-started-update/">Developing
+with Node.js on Azure, part 1</a>, but only sections 1-4.</p>
+<p>Networking Concepts and Protocols, parts 3 and 4.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
