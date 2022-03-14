@@ -14,6 +14,10 @@ Daily decks are available [here](daily-decks/).
 
 [Early In Career Program](https://app.pluralsight.com/channels/details/48bc9f7a-cd8a-467e-9b25-98ce729afd17)
 
+### Week 5 Project
+
+Can be found [here](week-5-project.md)
+
 ## Software requirements
 
 ### Need
