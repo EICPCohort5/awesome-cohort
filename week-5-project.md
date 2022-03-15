@@ -119,3 +119,29 @@ Model games, publishers, and platforms (more at the database slide)
   - Phillip Kopita
   - Rahul Whig
   - Wiktoria Fiolek
+
+## Suggested approach
+
+Here's a list for setting up a minimum of listing the games in the database:  
+
+1. user requests a url 
+2. -> express js answers on that url 
+3. -> express talks to sequelize to get data 
+4. -> sequelize talks to the database to get data 
+5. -> the database gives data to sequelize
+6. sequelize assembles the data as objects <- 
+7. sequelize hands the data to Express <-
+8. Express sends the data back as JSON <-
+9. browser receives results <-   
+10. browser renders results into HTML <- 
+
+### Example code for the above:
+
+All in restful-books
+
+1) public/javascripts/list-books.js  
+2) routes/books.js  
+3-6) [BREAK] orm/demos-connection.js (minimal), orm/models.js (more robust)  
+7) [MISSING]  
+8) routes/books.js  
+9-10) public/javascripts/list-books.js, public/list-books.html  
