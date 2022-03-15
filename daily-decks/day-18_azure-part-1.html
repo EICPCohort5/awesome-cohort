@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="John Paxton">
+  <meta name="dcterms.date" content="2022-03-15">
+  <title>EIC Cohort 5 - Day 18</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">EIC Cohort 5 - Day 18</h1>
+  <p class="author">John Paxton</p>
+  <p class="date">2022-03-15</p>
+</section>
+
+<section>
+<section id="eic-cohort-5---day-18" class="title-slide slide level1">
+<h1>EIC Cohort 5 - Day 18</h1>
+
+</section>
+<section id="azure-part-1" class="slide level2">
+<h2>Azure, Part 1</h2>
+</section>
+<section id="check-in" class="slide level2">
+<h2>Check-in</h2>
+<ul>
+<li>Attendance</li>
+<li>Pluralsight engagement winners
+<ul>
+<li>This week is classroom engagement</li>
+</ul></li>
+</ul>
+</section>
+<section id="todo-get-an-azure-free-account" class="slide level2">
+<h2>TODO: Get an Azure free account</h2>
+<ul>
+<li>If you don’t already have an Azure free account, get one
+<ul>
+<li>portal.azure.com</li>
+</ul></li>
+<li>You will need to provide a credit card, but you should have free
+resources</li>
+<li>Log in to the URL above when you’re done</li>
+</ul>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li>What is Azure?</li>
+<li>Azure jargon</li>
+<li>Virtual machines</li>
+<li>App service</li>
+</ul>
+</section>
+<section id="what-is-azure" class="slide level2">
+<h2>What is Azure?</h2>
+<p>Microsoft’s cloud platform providing:</p>
+<ul>
+<li>Storage</li>
+<li>Compute</li>
+<li>Databases</li>
+<li>DevOps: automated processes</li>
+<li>AI &amp; Machine Learning</li>
+<li>IoT</li>
+</ul>
+</section>
+<section id="whats-supported-on-azure" class="slide level2">
+<h2>What’s supported on Azure</h2>
+<p>Many languages and apps, but specifically</p>
+<ul>
+<li>Microsoft stuff, unsurprisingly
+<ul>
+<li>.NET</li>
+<li>.NET Core</li>
+<li>C#</li>
+<li>F#</li>
+<li>TypeScript</li>
+</ul></li>
+<li>Other languages (first class)
+<ul>
+<li>Java</li>
+<li>JavaScript</li>
+<li>Python</li>
+<li>Go</li>
+<li>PHP</li>
+<li>Powershell</li>
+<li>Ruby</li>
+</ul></li>
+</ul>
+</section>
+<section id="azure-jargon" class="slide level2">
+<h2>Azure jargon</h2>
+<p><strong>Regions</strong>: “a set of datacenters deployed within a
+latency-defined perimeter and connected through a dedicated regional
+low-latency network”</p>
+<p><strong>Geographies</strong>: Regions bound by similar criteria,
+often legal</p>
+<p><strong>Availability Zones</strong>: Distinct zones within a region
+to tolerate local failures</p>
+</section>
+<section id="virtual-machines" class="slide level2">
+<h2>Virtual machines</h2>
+<p>Let’s walk through setting up a virtual machine!</p>
+<p><a href="https://docs.microsoft.com/en-us/cli/azure/">Azure
+CLI</a></p>
+</section>
+<section id="app-service" class="slide level2">
+<h2>App service</h2>
+<ul>
+<li>Platform as a service</li>
+<li>Lower maintenance than building out your own VM</li>
+<li>Many “standard” builds</li>
+<li>You can submit your own Docker container to be managed</li>
+</ul>
+</section>
+<section id="app-service-automation" class="slide level2">
+<h2>App service automation</h2>
+<ul>
+<li>Provisioning</li>
+<li>Deployment (Git, GitHub, etc)</li>
+<li>Load balancing</li>
+<li>Scaling</li>
+<li>Backup</li>
+</ul>
+</section>
+<section id="scaling-terminology" class="slide level2">
+<h2>Scaling terminology</h2>
+<ul>
+<li>Vertical: Instances get beefier, but you don’t create more of them
+<ul>
+<li>Level up your character</li>
+</ul></li>
+<li>Horizontal: More instances, but same stats
+<ul>
+<li>More people in your raiding party</li>
+</ul></li>
+<li>Usually there’s a combination, though not always</li>
+</ul>
+</section>
+<section id="azure-compute-units" class="slide level2">
+<h2>Azure Compute Units</h2>
+<ul>
+<li>Azure has a baseline VM instance, Small VM
+<ul>
+<li>Also known as Standard_A1</li>
+</ul></li>
+<li>The performance offered by this VM is set at 100 Azure Compute Units
+(ACU)</li>
+<li>Other VMs have more or (rarely) less ACU, and are priced
+accordingly</li>
+<li>https://docs.microsoft.com/en-us/azure/virtual-machines/acu</li>
+</ul>
+</section>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
+<ul>
+<li>What did you think of the async material?</li>
+<li>What was clear?</li>
+<li>What wasn’t clear?</li>
+<li>Anything you want to try out in practice?</li>
+</ul>
+</section>
+<section id="activity" class="slide level2">
+<h2>Activity</h2>
+<p>Back to building our REST service!</p>
+<ul>
+<li>Anything blocking you?</li>
+<li>Any strategies you want to share?</li>
+<li>Who’s writing DDL, and who’s using Sequelize to set up the DB?</li>
+</ul>
+</section>
+<section id="wrap-up" class="slide level2">
+<h2>Wrap-up</h2>
+<h3 id="async-content">Async Content</h3>
+<p><a
+href="https://app.pluralsight.com/library/courses/developing-nodejs-microsoft-azure-getting-started-update">Azure,
+part 2</a></p>
+<p>Important sections: - The most important section here is section 8:
+Continuous Integration - We are not planning to use Cloud Storage or
+Azure Functions in the Capston - Though they are still important topics
+you need to know about in your career - The Cloud Databases stuff is
+good AS AN OVERVIEW - Don’t get bogged down in the implementation! -
+We’re going to use mySQL and we’ll have a demo of setting it up
+tomorrow</p>
+<p><a
+href="https://app.pluralsight.com/library/courses/comptia-network-plus-networking-concepts/">Networking
+concepts and protocols</a>: Through section 6.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
