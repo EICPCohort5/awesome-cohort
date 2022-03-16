@@ -36,22 +36,30 @@
   <p class="date">2022-03-10</p>
 </section>
 
-<section id="eic-cohort-5---day-16" class="slide level1">
+<section>
+<section id="eic-cohort-5---day-16" class="title-slide slide level1">
 <h1>EIC Cohort 5 - Day 16</h1>
-<h2 id="owasp-top-10">OWASP Top 10</h2>
-<h2 id="check-in">Check-in</h2>
+
+</section>
+<section id="owasp-top-10" class="slide level2">
+<h2>OWASP Top 10</h2>
+</section>
+<section id="check-in" class="slide level2">
+<h2>Check-in</h2>
 <ul>
 <li>Attendance</li>
 <li>What’s your comfort food?</li>
 </ul>
-<h2 id="summary">Summary</h2>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
 <ul>
 <li>OWASP? Top 10? API Top 10?</li>
 <li>The top 10</li>
 </ul>
 </section>
-<section id="owasp" class="slide level1">
-<h1>OWASP</h1>
+<section id="owasp" class="slide level2">
+<h2>OWASP</h2>
 <ul>
 <li>Open Web Application Security Project (“Oh-wasp”)</li>
 <li>Clearinghouse for good security practices</li>
@@ -60,8 +68,9 @@
 href="https://github.com/juice-shop/juice-shop">juice shop</a>
 application for instance!</li>
 </ul>
-<h2 id="top-10-broken-object-level-authorization">Top 10: Broken object
-level authorization</h2>
+</section>
+<section id="broken-object-level-authorization" class="slide level2">
+<h2>Broken object level authorization</h2>
 <ul>
 <li>Can I get to (authorization) stuff (objects) that I shouldn’t be
 able to (broken)</li>
@@ -69,8 +78,9 @@ able to (broken)</li>
 <li>Use the principle of least privilege on object authorization</li>
 <li>Issue area: Application design and implementation</li>
 </ul>
-<h2 id="top-10-broken-user-authentication">Top 10: Broken user
-authentication</h2>
+</section>
+<section id="broken-user-authentication" class="slide level2">
+<h2>Broken user authentication</h2>
 <ul>
 <li>Can I impersonate (authentication) someone (user) I’m not
 (broken)?</li>
@@ -78,8 +88,9 @@ authentication</h2>
 <li>Principle of least privilege still applies</li>
 <li>Issue area: Application design, platform hosting</li>
 </ul>
-<h2 id="top-10-excessive-data-exposure">Top 10: Excessive data
-exposure</h2>
+</section>
+<section id="excessive-data-exposure" class="slide level2">
+<h2>Excessive data exposure</h2>
 <ul>
 <li>Returns too much (excessive) data
 <ul>
@@ -90,8 +101,9 @@ exposure</h2>
 <li>Think of <code>SELECT *</code> vs <code>SELECT [fields]</code></li>
 <li>Issue area: Application design and implementation</li>
 </ul>
-<h2 id="lack-of-resource-and-rate-limiting">Lack of Resource and Rate
-Limiting</h2>
+</section>
+<section id="lack-of-resource-and-rate-limiting" class="slide level2">
+<h2>Lack of Resource and Rate Limiting</h2>
 <ul>
 <li>Denial of availability</li>
 <li>Throttle requests handled</li>
@@ -100,8 +112,9 @@ Limiting</h2>
 <li>Issue area: Platform hosting, sometimes application design and
 implementation</li>
 </ul>
-<h2 id="broken-function-level-authorization">Broken function level
-authorization</h2>
+</section>
+<section id="broken-function-level-authorization" class="slide level2">
+<h2>Broken function level authorization</h2>
 <ul>
 <li>Similar to broken object level authorization</li>
 <li>Are you granted authorization to API functions that you shouldn’t
@@ -110,14 +123,18 @@ be?</li>
 <li>Use role-based access to reinforce limiting authorization</li>
 <li>Issue area: Application design and implementation</li>
 </ul>
-<h2 id="mass-assignment">Mass assignment</h2>
+</section>
+<section id="mass-assignment" class="slide level2">
+<h2>Mass assignment</h2>
 <ul>
 <li>Data is converted into objects in the API</li>
 <li>The attacker might add more data/fields which would then override
 important information</li>
 <li>Issue area: Application design and implementation</li>
 </ul>
-<h2 id="security-misconfiguration">Security misconfiguration</h2>
+</section>
+<section id="security-misconfiguration" class="slide level2">
+<h2>Security misconfiguration</h2>
 <ul>
 <li>Something somewhere has a hole; very broad!</li>
 <li>Often comes up between prototyping and production
@@ -127,14 +144,22 @@ important information</li>
 </ul></li>
 <li>Issue area: Platform hosting, some application design</li>
 </ul>
-<h2 id="injection">Injection</h2>
+</section>
+<section id="injection" class="slide level2">
+<h2>Injection</h2>
+<figure>
+<img data-src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png"
+alt="Little Bobby Tables" />
+<figcaption aria-hidden="true">Little Bobby Tables</figcaption>
+</figure>
 <ul>
 <li>An attacker’s attempt to send data to an application in a way that
 will change the meaning of commands being sent to an interpreter</li>
-<li><a href="https://xkcd.com/327/">Little Bobby Tables</a></li>
 <li>Issue area: Application implementation, some design</li>
 </ul>
-<h2 id="improper-assets-management">Improper Assets Management</h2>
+</section>
+<section id="improper-assets-management" class="slide level2">
+<h2>Improper Assets Management</h2>
 <ul>
 <li>Bad environment and version management
 <ul>
@@ -144,8 +169,9 @@ configuration</li>
 </ul></li>
 <li>Issue area: Platform hosting, application design</li>
 </ul>
-<h2 id="insufficient-logging-and-monitoring">Insufficient logging and
-monitoring</h2>
+</section>
+<section id="insufficient-logging-and-monitoring" class="slide level2">
+<h2>Insufficient logging and monitoring</h2>
 <ul>
 <li>Risk because you’re not getting good information from your
 application</li>
@@ -155,15 +181,21 @@ application</li>
 <li>Issue area: Platform hosting, application design,
 implementation</li>
 </ul>
-<h2 id="discussion">Discussion</h2>
+</section>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
 <ul>
 <li>What did you think of the async material?</li>
 <li>What was clear?</li>
 <li>What wasn’t clear?</li>
 <li>Anything you want to try out in practice?</li>
 </ul>
-<h2 id="activity">Activity</h2>
-<h2 id="wrap-up">Wrap-up</h2>
+</section>
+<section id="activity" class="slide level2">
+<h2>Activity</h2>
+</section>
+<section id="wrap-up" class="slide level2">
+<h2>Wrap-up</h2>
 <p>Evals: https://www.surveymonkey.com/r/X2CDGV9</p>
 <h3 id="async-content">Async Content</h3>
 <ul>
@@ -175,7 +207,7 @@ Watch parts 1 and 2.</li>
 href="https://app.pluralsight.com/library/courses/cloud-computing-fundamentals/">Fundamentals
 of Cloud Computing</a>: Cloud computing theory</li>
 </ul>
-</section>
+</section></section>
     </div>
   </div>
 
