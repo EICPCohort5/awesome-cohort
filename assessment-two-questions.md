@@ -5,7 +5,7 @@ some additional questions.
 
 Questions are multiple choice or true/false on the assessment. Here, they are open-ended.
 
-1. True or false: Software framesworks have extensive default behavior
+1. True or false: Software frameworks have extensive default behavior
 1. True or false: Framework code is often non-modifiable
 1. True or false: Frameworks are lighter versions of libraries
 1. Which comes first, Continuous Integration or Continuous Deployment?
